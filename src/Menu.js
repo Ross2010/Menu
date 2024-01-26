@@ -4,7 +4,8 @@ import Chicken_Caesar from "./images/Grilled_Chicken_Caesar_Salad.mp4";
 import Mushroom_Risotto from "./images/Mushroom_Risotto.mp4";
 import Truffle_Caprese_Panini from "./images/Truffle_Caprese_Panini.jpg";
 import Truffle_Filet_Mignon from "./images/Truffle-Infused Filet Mignon.mp4";
-
+import Avocado_Toast_Deluxe from "./images/Avocado_Toast_Deluxe.mp4"
+import Smoked_Gouda_Carbonara from "./images/Smoked_Gouda_Carbonara.mp4"
 
 
 const BreakfastItems = [
@@ -29,7 +30,7 @@ const BreakfastItems = [
   {
     name: "Avocado Toast Deluxe",
     price: 22.99,
-    src: Greek_yogurt,
+    src: Avocado_Toast_Deluxe,
     facts: [
       "Whole grain toast topped with mashed avocado, poached egg, and cherry tomatoes.",
       "Approximately 350-450 calories per serving.",
@@ -87,12 +88,11 @@ const DinnerItems = [
     ],
   },
   {
-    name: "Miso-Glazed Black Cod",
+    name: "Smoked Gouda Carbonara",
     price: 43.85,
-    src: Greek_yogurt,
+    src: Smoked_Gouda_Carbonara,
     facts: [
-      "Grilled black cod marinated in miso, served with jasmine rice and sautéed baby bok choy.",
-      "Approximately 400-500 calories per serving.",
+      "Used smoked Gouda cheese, adding a deliciously smoky flavor to this silky, hearty and totally delicious pasta.",
     ],
   },
 ];
