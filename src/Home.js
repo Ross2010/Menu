@@ -1,6 +1,9 @@
+// Home.js
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import "./App.css";
 
 const fetchData = async () => {
   try {
@@ -34,18 +37,13 @@ const Home = () => {
         )}
       </div>
 
-      <div>
-        <button className="button">
-          <Link to="/breakfast/BreakfastDetail">Breakfast</Link>
-        </button>
-        <button className="button">
-          <Link to="/lunch/LunchDetail">Lunch</Link>
-        </button>
-        <button className="button">
-          <Link to="/dinner/DinerDetail">Dinner</Link>
-        </button>
+      <div className="button-container">
+        <Link to="/breakfast/BreakfastDetail" className="block glow">Breakfast</Link>
+        <Link to="/lunch/LunchDetail" className="block glow">Lunch</Link>
+        <Link to="/dinner/DinerDetail" className="block glow">Dinner</Link>
       </div>
     </>
   );
 };
+
 export default Home;
