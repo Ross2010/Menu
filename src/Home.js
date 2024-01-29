@@ -1,46 +1,23 @@
 // Home.js
-
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import "./App.css";
+import "./Home.css";
+import production from "./images/production.mp4";
 
-const fetchData = async () => {
-  try {
-    const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php');
-    console.log('API Response:', response.data);
-    return response.data.drinks[0];
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
-  }
-};
 
 const Home = () => {
-  const [cocktail, setCocktail] = useState(null);
-
-  useEffect(() => {
-    fetchData()
-      .then((result) => setCocktail(result))
-      .catch(() => setCocktail(null));
-  }, []);
-
   return (
     <>
-      <div>
-        <h3 style={{ color: 'red' }}>Drink of the day</h3>
-        {cocktail && (
-          <div id="cocktail">
-            <h3>{cocktail.strDrink}</h3>
-            <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-          </div>
-        )}
+      <div className="video-container">
+        <video autoPlay muted loop id="bgVideo">
+          <source src={production} type="video/mp4" />
+        </video>
       </div>
-
       <div className="button-container">
-        <Link to="/breakfast/BreakfastDetail" className="block glow">Breakfast</Link>
-        <Link to="/lunch/LunchDetail" className="block glow">Lunch</Link>
-        <Link to="/dinner/DinerDetail" className="block glow">Dinner</Link>
+        <Link to="/breakfast/Breakfast" className="block">Breakfast</Link>
+        <Link to="/lunch/Lunch" className="block">Lunch</Link>
+        <Link to="/dinner/Dinner" className="block">Dinner</Link>
+        <Link to="/Coctails" className="block">Coctails</Link> 
       </div>
     </>
   );

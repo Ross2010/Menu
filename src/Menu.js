@@ -2,7 +2,8 @@ import Greek_yogurt from "./images/Greek_yogurt.mp4"
 import Smoked_Salmon from "./images/Smoked_Salmon.mp4";
 import Chicken_Caesar from "./images/Grilled_Chicken_Caesar_Salad.mp4";
 import Mushroom_Risotto from "./images/Mushroom_Risotto.mp4";
-import Truffle_Caprese_Panini from "./images/Truffle_Caprese_Panini.jpg";
+import Soup from "./images/Soup.mp4";
+import Burger from "./images/Burger.mp4";
 import Truffle_Filet_Mignon from "./images/Truffle-Infused Filet Mignon.mp4";
 import Avocado_Toast_Deluxe from "./images/Avocado_Toast_Deluxe.mp4"
 import Smoked_Gouda_Carbonara from "./images/Smoked_Gouda_Carbonara.mp4"
@@ -49,21 +50,19 @@ const LunchItems = [
     ],
   },
   {
-    name: "Truffle-infused Caprese Panini",
+    name: "Creamy Tomato Basil Soup",
     price: 24.39,
-    src: Truffle_Caprese_Panini,
+    src: Soup,
     facts: [
-      "Fresh mozzarella, heirloom tomatoes, basil pesto, and a drizzle of truffle oil on ciabatta bread.",
-      "Approximately 500-600 calories per serving.",
+      "Timeless classic that promises to delight your taste buds. Our chefs meticulously blend ripe, sun-kissed tomatoes with aromatic basil and a hint of garlic, creating a velvety-smooth texture that will warm your soul with every spoonful.",
     ],
   },
   {
-    name: "Lobster and Avocado Wrap",
+    name: "Double Beef Burger",
     price: 28.34,
-    src: Greek_yogurt,
+    src: Burger,
     facts: [
-      "Chunks of succulent lobster, creamy avocado, mixed greens, and aioli wrapped in a spinach tortilla.",
-      "Approximately 700-800 calories per serving.",
+      "Indulge your carnivorous cravings with our mouthwatering Double Beef Burger – a symphony of flavors and textures that promises to satisfy the heartiest of appetites. Our culinary artisans start with two perfectly seasoned, juicy beef patties made from the finest cuts of premium beef, expertly grilled to perfection.",
     ],
   },
 ];
