@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './App.css';
 import './Home.css';
 
-const Coctails = () => {
+const Cocktails = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php');
@@ -16,14 +16,27 @@ const Coctails = () => {
     }
   };
 
-  const [cocktail, setCocktail] = useState(null);
+  const fetchMultipleDrinks = async () => {
+    const drinks = [];
+    for (let i = 0; i < 10; i++) {
+      try {
+        const drink = await fetchData();
+        drinks.push(drink);
+      } catch (error) {
+        console.error('Error fetching drink:', error.message);
+      }
+    }
+    return drinks;
+  };
+
+  const [cocktails, setCocktails] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchData()
-      .then((result) => {
-        setCocktail(result);
+    fetchMultipleDrinks()
+      .then((results) => {
+        setCocktails(results);
         setLoading(false);
       })
       .catch(() => {
@@ -42,14 +55,14 @@ const Coctails = () => {
 
   return (
     <div className='page-container'>
-      <h3>Drink of the day</h3>
-      {cocktail && (
-        <div id='cocktail'>
+      <h3>Top 10 Drinks</h3>
+      {cocktails.map((cocktail, index) => (
+        <div key={index} id={`cocktail-${index}`}>
           <h4>{cocktail.strDrink}</h4>
           <p>{cocktail.strInstructions}</p>
           <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
         </div>
-      )}
+      ))}
       <Link to='/' className='block'>
         Main Menu
       </Link>
@@ -57,4 +70,4 @@ const Coctails = () => {
   );
 };
 
-export default Coctails;
+export default Cocktails;
